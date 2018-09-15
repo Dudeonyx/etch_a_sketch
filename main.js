@@ -6,7 +6,7 @@ const paragraph = document.querySelector('#state');
 const button = document.querySelector('#erase');
 button.onclick = () => {
     mode = 2;
-    paragraph.textContent = 'OFF';
+    paragraph.textContent = 'ERASER MODE';
 };
 const reset = document.querySelector('#reset');
 reset.onclick = () => {
@@ -63,11 +63,14 @@ function start() {
         }
       });
     const colorCheck = document.querySelector('#checkcolor');
+    const colorState = document.querySelector('#colorstate');
     colorCheck.addEventListener('click',(evt)=>{
       if (colorCheck.checked) {
           colorMode = 1;
-      } else {
-          colorMode = 0;
+          colorState.textContent = 'RANDOM';
+        } else {
+            colorMode = 0;
+            colorState.textContent = 'BLACK & WHITE';
       }
     });
     function colorPixel(pixel) {
