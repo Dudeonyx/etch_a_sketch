@@ -1,6 +1,7 @@
 const etchbox = document.querySelector('.etchbox');
 let etchPadSize = 40;
 let mode;
+let colorMode;
 const paragraph = document.querySelector('p');
 const button = document.querySelector('#erase');
 button.onclick = () => {
@@ -12,29 +13,33 @@ reset.onclick = () => {
     start();
   
 };
-const submit = document.querySelector('#submit');
-submit.onclick = () => {
-    let newsize = document.querySelector('#input').value;
+const setEtchpadSize = document.querySelector('#submit');
+setEtchpadSize.onclick = () => {
+    let newsize = Number(document.querySelector('#input').value);
+    if (!newsize) {return "OOPS";}
     etchPadSize = newsize;
     console.log(etchPadSize);
     start();
+    document.querySelector('#input').value = '';
+}
+function createEtchPad() {
+  etchbox.innerHTML = '';
+  for (let i = 0; i < etchPadSize; i++) {
+    const verticalDiv = document.createElement('div');
+    for (let j = 0; j < etchPadSize; j++) {
+      const horizontalDiv = document.createElement('div');
+      horizontalDiv.classList.add('pixel');
+      verticalDiv.appendChild(horizontalDiv);
+    }
+    etchbox.appendChild(verticalDiv);
+  }
 }
 function start() {
   mode = 0;
   paragraph.textContent = 'OFF';
-  function createEtchPad() {
-    etchbox.innerHTML = '';
-    for (let i = 0; i < etchPadSize; i++) {
-      const verticalDiv = document.createElement('div');
-      for (let j = 0; j < etchPadSize; j++) {
-        const horizontalDiv = document.createElement('div');
-        horizontalDiv.classList.add('pixel');
-        verticalDiv.appendChild(horizontalDiv);
-      }
-      etchbox.appendChild(verticalDiv);
-    }
-  }
   createEtchPad();
+  const gridSizeDisplay = document.querySelector('#gridsize');
+  gridSizeDisplay.textContent = `${etchPadSize} X ${etchPadSize}`
   const pixels = document.querySelectorAll('.pixel');
   // console.dir(pixels);
   pixels.forEach((pixel) => {
@@ -49,9 +54,27 @@ function start() {
             }
         });
     });
+    const gridCheck = document.querySelector('#grid');
+    gridCheck.addEventListener('click',(evt)=>{
+        if (gridCheck.checked) {
+            etchbox.classList.add('border');
+        } else {
+            etchbox.classList.remove('border');
+        }
+      });
+    const colorCheck = document.querySelector('#checkcolor');
+    colorCheck.addEventListener('click',(evt)=>{
+      if (colorCheck.checked) {
+          colorMode = 1;
+      } else {
+          colorMode = 0;
+      }
+    });
     function colorPixel(pixel) {
         // console.dir(pixel);
-        if (mode === 1) {
+        if (mode === 1 && !colorMode) {
+                pixel.target.setAttribute(`style`,`background: black`);
+            } else if (mode === 1  && colorMode) {
             if (!pixel.target.getAttribute('style')) {
                 pixel.target.setAttribute(`style`,`background: ${randomColor()}`);
             }

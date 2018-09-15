@@ -5,11 +5,15 @@ align-items: center;
 justify-content: center;
 /* height: 95vh; */
 }
+p{
+    margin: 0px;
+}
 body>div {
+margin:2px;
 display: flex;
 flex: 1 1 100%;
 flex-flow:column nowrap;
-max-height: 550px;
+/* max-height: 551px; */
 min-height: 550px;
 max-width: 550px;
 min-width: 550px;
@@ -22,11 +26,15 @@ div {
     flex: 1 1 100%;
     border: 0 solid black;
 }
-body>div>div {
-    border-width: 0 0px 1px 0;
+body>.border>div:last-child{
+    
+    border-width: 0 0px 0px 0;
 }
-body>div>div>div {
-    border-width: 0px 1px 0px 0px;
+body>.border>div {
+    border-width: 0 0px 0.05px 0;
+}
+body>.border>div>div {
+    border-width: 0px 0.05px 0px 0px;
 }
 .black {
     background-color: black;
