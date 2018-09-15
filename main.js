@@ -2,7 +2,7 @@ const etchbox = document.querySelector('.etchbox');
 let etchPadSize = 40;
 let mode;
 let colorMode;
-const paragraph = document.querySelector('p');
+const paragraph = document.querySelector('#state');
 const button = document.querySelector('#erase');
 button.onclick = () => {
     mode = 2;

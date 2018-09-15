@@ -9,15 +9,14 @@
 </head>
 <body>
     <section>
-        <input type="text" name="" id="input" placeholder="Enter new etchpad size"><button id="submit">submit</button>
+        <p>Current size: <span id="gridsize"></span></p> <input type="text" name="" id="input" placeholder="Enter new etchpad size"><button id="submit">submit</button>
     </section>
     <section>
     <button id='reset'>Reset</button><button id="erase">Erase</button> <input type="checkbox" name="Random Color?" id="checkcolor">Randomize Color?</input><input type="checkbox" name="" id="grid" checked>Toggle Grid</input> 
 </section>
    <div class="etchbox border"></div>
 
-    <p>OFF</p>
-    <p id="gridsize"></p>
+    <p>BRUSH: <span id="state">OFF</span>
 </body>
 <script src="main.js"></script>
 </html>
