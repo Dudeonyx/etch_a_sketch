@@ -52,8 +52,18 @@ function start() {
     function colorPixel(pixel) {
         // console.dir(pixel);
         if (mode === 1) {
-            pixel.target.classList.add('black');
-        } else if (mode === 2) pixel.target.classList.remove('black');
+            if (!pixel.target.getAttribute('style')) {
+                pixel.target.setAttribute(`style`,`background: ${randomColor()}`);
+            }
+        } else if (mode === 2) pixel.target.removeAttribute(`style`);
     }
 }
 start();
+function randomColor() {
+    let set = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','F','D','C','B','A','9','8','7','6','5','4','3','2','1','0'];
+    let colorCode = '#';
+    for (let i = 0; i < 6; i++) {
+        colorCode += set[Math.floor(Math.random()*set.length)];
+    }
+    return colorCode;
+}
