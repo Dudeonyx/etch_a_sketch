@@ -26,17 +26,9 @@ div {
   display: flex;
   flex-flow: row nowrap;
   flex: 1 1 100%;
-  border: 0 solid black;
+  outline: rgba(0, 0, 0, 0.014) solid 0px;
 }
-body > .border > div:last-child {
-  border-width: 0 0px 0px 0;
-}
-body > .border > div {
-  border-width: 0 0px 0.05px 0;
-}
+
 body > .border > div > div {
-  border-width: 0px 0.05px 0px 0px;
-}
-.black {
-  background-color: black;
+  outline-width: 0.005px;
 }
