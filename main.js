@@ -48,6 +48,9 @@ function start() {
           if (mode === 1) {
               mode = 0;
               paragraph.textContent = 'OFF';
+            } else if (mode === 2) {
+                mode = 0;
+                paragraph.textContent = 'OFF';
             } else {
                 mode = 1;
                 paragraph.textContent = 'ON';
