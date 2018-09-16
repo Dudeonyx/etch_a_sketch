@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,16 +8,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
     <section>
-        <p>Current size: <span id="gridsize"></span></p> <input type="text" name="" id="input" placeholder="Enter new etchpad size"><button id="submit">submit</button>
+        <p>Current size:
+            <span id="gridsize"></span>
+        </p>
+        <input type="text" name="" id="input" placeholder="Enter new etchpad size">
+        <button id="submit">submit</button>
     </section>
     <section>
-    <button id='reset'>Reset</button><button id="erase">Erase</button> <input type="checkbox" id="checkcolor"><label for="checkcolor">Randomize Brush Color</label> <input type="checkbox" name="" id="grid" checked><label for="grid">Show Grid</label> 
-</section>
-   <div class="etchbox border"></div>
+        <button id='reset'>Reset</button>
+        <button id="erase">Erase</button>
+        <input type="checkbox" id="checkcolor">
+        <label for="checkcolor">Randomize Brush Color</label>
+        <input type="checkbox" name="" id="grid" checked>
+        <label for="grid">Show Grid</label>
+    </section>
+    <div class="etchbox border"></div>
 
-    <p>BRUSH: <span id="state">OFF</span> (click etchpad to toggle)</p> <p>COLOR: <span id="colorstate">BLACK & WHITE</span></p>
+    <p>BRUSH:
+        <span id="state">OFF</span> (click etchpad to toggle)</p>
+    <p>COLOR:
+        <span id="colorstate">BLACK & WHITE</span>
+    </p>
 </body>
 <script src="main.js"></script>
+
 </html>
