@@ -1,43 +1,42 @@
 body {
-display: flex;
-flex-flow: column nowrap;
-align-items: center;
-justify-content: center;
-/* height: 95vh; */
-margin: 2px;
-font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  /* height: 95vh; */
+  margin: 2px;
+  font-family: Arial, Helvetica, sans-serif;
 }
-p{
-    margin: 0px;
+p {
+  margin: 0px;
 }
-body>div {
-margin:2px;
-display: flex;
-flex: 1 1 100%;
-flex-flow:column nowrap;
-/* max-height: 551px; */
-min-height: 540px;
-max-width: 540px;
-min-width: 540px;
-border: 1px solid black;
+body > div {
+  margin: 2px;
+  display: flex;
+  flex: 1 1 100%;
+  flex-flow: column nowrap;
+  /* max-height: 551px; */
+  min-height: 540px;
+  max-width: 540px;
+  min-width: 540px;
+  border: 1px solid black;
 }
 
 div {
-    display: flex;
-    flex-flow:row nowrap;
-    flex: 1 1 100%;
-    border: 0 solid black;
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 100%;
+  border: 0 solid black;
 }
-body>.border>div:last-child{
-    
-    border-width: 0 0px 0px 0;
+body > .border > div:last-child {
+  border-width: 0 0px 0px 0;
 }
-body>.border>div {
-    border-width: 0 0px 0.05px 0;
+body > .border > div {
+  border-width: 0 0px 0.05px 0;
 }
-body>.border>div>div {
-    border-width: 0px 0.05px 0px 0px;
+body > .border > div > div {
+  border-width: 0px 0.05px 0px 0px;
 }
 .black {
-    background-color: black;
+  background-color: black;
 }
